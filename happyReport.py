@@ -21,8 +21,8 @@ if(caminhoLista):
 else:
     print("Lista não encontrada. encerrando!...")
     exit()
-marcelo = input("Insira o payload do xss:")
-start = input(f'Reportar links da lista |{nomelista[3]}| com o payload | {marcelo} | ?(S):')
+payload = input("Insira o payload do xss:")
+start = input(f'Reportar links da lista |{nomelista[3]}| com o payload | {payload} | ?(S):')
 
 if(not start.lower() == 's'):
     print('i´m a joke to you ? ;(. encerrando!...')
@@ -149,7 +149,7 @@ def mainThread():
         twitterLogin(driver, USER, PASS)
 
     for url in urls:
-        doReport(driver, url, marcelo)
+        doReport(driver, url, payload)
         apvTotal = apvTotal + countReports(driver)
         driver.get("https://www.openbugbounty.org/report/")
     total[0] = apvTotal
